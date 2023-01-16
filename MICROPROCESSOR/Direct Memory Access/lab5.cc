@@ -68,7 +68,7 @@ int main()
 
 	//number of bytes to transfer
 
-	*(cdma_ptr + 10) = size*4;
+	*
 
 
 
