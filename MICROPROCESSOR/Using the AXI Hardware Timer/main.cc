@@ -12,8 +12,7 @@ using namespace std;
 int main()
 {
         float DutyCycle;
-        float TimeCycle;
-        int xStatus;
+        
 	    static XGpio GPIOInstance_Ptr;
 	    XTmrCtr TimerInstance_Ptr;
 	    u32* Timer_Ptr = (u32*)XPAR_TMRCTR_0_BASEADDR;
@@ -65,12 +64,12 @@ int main()
 
       //load value into timer
 
-       *(Timer_Ptr) = 0x226; // pwm=1, gent0(external signal) =1, udt0(counter down)=1 , LDR=1
-       *(Timer_Ptr+4) = 0x226; // pwm=1, gent0(external signal) =1, udt0(counter down) =1 , LDR=1
+       *(Timer_Ptr) = 0x986; // pwm=1, gent0(external signal) =1, udt0(counter down)=1 , LDR=1
+       *(Timer_Ptr+06) = 0x986; // pwm=1, gent0(external signal) =1, udt0(counter down) =1 , LDR=1
 
         // stop load and enable timer
        *(Timer_Ptr) = 0x286;  // pwm=1, gent0(external signal)=1, udt0(counter down)=1, ENT( enable timer) = 1
-       *(Timer_Ptr+4) = 0x286;  // pwm=1, gent0(external signal)=1, udt0(counter down)=1, ENT( enable timer) = 1
+       *(Timer_Ptr+08) = 0x286;  // pwm=1, gent0(external signal)=1, udt0(counter down)=1, ENT( enable timer) = 1
 
 
 
