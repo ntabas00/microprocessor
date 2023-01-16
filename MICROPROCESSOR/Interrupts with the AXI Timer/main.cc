@@ -49,9 +49,7 @@ void Timer_InterruptHandler(void)
 	cout << "You pressed "<<  input << endl;
 	cout << "Enabling the timer to start" << endl;
 
-	*(timer_ptr) = 0x0d4 ;
-	*(timer_ptr + 4) = 0x0d4 ;
-
+	
 }
 
 int SetUpInterruptSystem(XScuGic *XScuGicInstancePtr)
@@ -171,7 +169,7 @@ int main()
         //Step-3 :load the reset value
         //~~~~~~~~~
        *(timer_ptr+ 1) = 0xf0000000;
-       *(timer_ptr+ 5) = 0xffffff00;
+       *(timer_ptr+ 5) = 0xfff000f00;
 
 
 
